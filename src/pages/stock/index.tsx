@@ -1,5 +1,6 @@
 import ByStatusStockSection from "@/components/ByStatusStockTabs";
 import CategoryCard from "@/components/CategoryCard";
+import KpiCard from "@/components/KpiCard";
 import PageLayout from "@/components/PageLayout";
 import React, { ReactElement } from "react";
 
@@ -18,6 +19,13 @@ const categoriesData = [
   },
 ];
 
+const kpisData = [
+  { label: "Total Visitors", value: "300k" },
+  { label: "Viewed", value: "1k" },
+  { label: "Order", value: "25k" },
+  { label: "Cancelled", value: "20k" },
+];
+
 export default function Stock() {
   return (
     <div className="md:h-[calc(100vh-128px)] 2xl:h-[calc(100vh-152px)] w-full grid grid-cols-12 gap-10 overflow-hidden">
@@ -32,7 +40,10 @@ export default function Stock() {
               Get Free Shipping Every $30 With No Minimum Purchase
             </p>
           </div>
-          <div className=" h-52 w-72 bg-cover bg-center bg-[url('/images/healthy-salad.jpg')]"></div>
+          <div
+            className=" h-52 w-72 bg-cover bg-center"
+            style={{ backgroundImage: "url('/images/healthy-salad.jpg')" }}
+          ></div>
         </div>
 
         <div className="w-full h-max flex flex-col gap-4">
@@ -46,7 +57,13 @@ export default function Stock() {
 
         <ByStatusStockSection />
       </div>
-      <div className="col-span-4 bg-green-500 h-full">right</div>
+      <div className="col-span-4 flex flex-col gap-4 overflow-auto">
+        <div className="h-52 grid grid-cols-2 gap-1">
+          {kpisData?.map((kpi) => (
+            <KpiCard key={kpi.label} {...kpi} />
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
