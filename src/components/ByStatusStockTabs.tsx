@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { TabButton, TabContent } from "./ui/TabButton";
+import { TabButton, TabContent } from "./ui/Tabs";
 import ByStatusStockCard from "./ByStatusStockCard";
 
 const options = [
