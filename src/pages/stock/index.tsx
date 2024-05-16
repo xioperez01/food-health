@@ -2,7 +2,8 @@ import ByStatusStockSection from "@/components/ByStatusStockTabs";
 import CategoryCard from "@/components/CategoryCard";
 import KpiCard from "@/components/KpiCard";
 import PageLayout from "@/components/PageLayout";
-import { categoriesData, kpisData } from "@/data/fakedata";
+import ShopCard from "@/components/ShopCard";
+import { categoriesData, kpisData, shopData } from "@/data/fakedata";
 import React, { ReactElement } from "react";
 
 export default function Stock() {
@@ -42,7 +43,7 @@ export default function Stock() {
             <KpiCard key={kpi.label} {...kpi} />
           ))}
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col gap-y-5">
           <div className="flex flex-row items-center justify-between">
             <div>
               <h2 className="font-semibold text-xl">My Cart</h2>
@@ -62,6 +63,9 @@ export default function Stock() {
               />
             </svg>
           </div>
+          {shopData?.map((item) => (
+            <ShopCard key={item?.title} {...item} />
+          ))}
         </div>
       </div>
     </div>

@@ -7,10 +7,12 @@ const variants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary p-3.5",
+        default: "bg-primary",
+        secondary: "bg-secondary",
       },
       size: {
-        default: "",
+        default: "p-4",
+        sm: "p-2.5",
       },
     },
     defaultVariants: { variant: "default", size: "default" },
@@ -25,11 +27,12 @@ export default function Button({
   variant,
   size,
   className,
+  children,
   ...props
 }: ButtonProps) {
   return (
-    <button className={cn(variants({ variant, size, className }))}>
-      Order Again
+    <button className={cn(variants({ variant, size, className }))} {...props}>
+      {children}
     </button>
   );
 }
