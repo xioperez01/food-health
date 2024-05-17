@@ -11,8 +11,8 @@ export function TabButton({ children, isActive, onClick }: TabButtonProps) {
   return (
     <button
       className={clsx(
-        "text-secondary font-medium text-xl px-1 hover:border-black hover:border-b-2 hover:text-black duration-200",
-        { "border-black border-b-2 text-black": isActive }
+        "font-medium text-xl px-1 hover:border-black border-black border-b-2 text-black hover:border-b-2 hover:text-black duration-200",
+        { "text-secondary border-none": !isActive }
       )}
       onClick={onClick}
     >

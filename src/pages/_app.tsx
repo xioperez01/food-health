@@ -1,6 +1,7 @@
 import "@/styles/globals.css";
 import { NextPage } from "next";
 import { Poppins } from "next/font/google";
+import Head from "next/head";
 
 import { ReactElement, ReactNode } from "react";
 
@@ -25,8 +26,14 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
   const getLayout = Component.getLayout ?? ((page) => page);
 
   return (
-    <main className={font.className}>
-      {getLayout(<Component {...pageProps} />)}
-    </main>
+    <>
+      <Head>
+        <title>FoodHealth</title>
+  <meta name="description" content="Food App"/>
+      </Head>
+      <main className={font.className}>
+        {getLayout(<Component {...pageProps} />)}
+      </main>
+    </>
   );
 }

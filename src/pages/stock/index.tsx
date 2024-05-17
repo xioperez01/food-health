@@ -4,13 +4,14 @@ import KpiCard from "@/components/KpiCard";
 import PageLayout from "@/components/PageLayout";
 import ShopCard from "@/components/ShopCard";
 import { categoriesData, kpisData, shopData } from "@/data/fakedata";
+import Image from "next/image";
 import React, { ReactElement } from "react";
 
 export default function Stock() {
   return (
     <div className="xl:h-[calc(100vh-128px)] 2xl:h-[calc(100vh-152px)] w-full flex flex-col xl:flex-row gap-6 md:gap-6 xl:gap-8 overflow-y-auto overflow-x-hidden md:overflow-hidden">
       {/* Left Panel */}
-      <div className="w-full xl:w-3/5 shrink flex flex-col gap-4 overflow-y-auto overflow-x-hidden xl:pr-1">
+      <div className="w-full xl:w-3/5 2xl:w-3/4 shrink flex flex-col gap-4 overflow-y-auto overflow-x-hidden xl:pr-1">
         <div className="bg-clip-border overflow-hidden w-full flex flex-row items-center shrink-0 justify-between md:rounded-[14px] bg-lightOrange text-white">
           <div className="flex flex-col py-6 pl-4 sm:pl-8 xl:pl-10 gap-2 shrink-0 w-2/3 sm:w-2/3 xl:w-3/5">
             <div className="font-semibold text-[40px]">
@@ -22,12 +23,13 @@ export default function Stock() {
             </p>
           </div>
 
-          {/*<div
-              className="h-full w-1/3 shrink bg-cover bg-center aspect-auto"
-              style={{ backgroundImage: "url('/images/healthy-salad.jpg')" }}
-  ></div>*/}
-
-          <img src="/images/healthy-salad.jpg" className="h-full shrink" />
+          <Image
+            height={10000}
+            width={10000}
+            src="/images/healthy-salad.jpg"
+            className="h-full shrink w-full"
+            alt="Salad"
+          />
         </div>
 
         <div className="w-full h-max flex flex-col gap-4 px-2 sm:px-5 md:px-0">
@@ -42,7 +44,7 @@ export default function Stock() {
         <ByStatusStockSection />
       </div>
       {/* Right Panel */}
-      <div className="w-full xl:w-2/5 shrink-0 flex flex-col gap-4 overflow-auto xl:pr-1 px-2 sm:px-5 md:px-0">
+      <div className="w-full xl:w-2/5 2xl:w-145 shrink-0 flex flex-col gap-4 overflow-auto xl:pr-1 px-2 sm:px-5 md:px-0">
         <div className="h-52 grid grid-cols-2 gap-1">
           {kpisData?.map((kpi) => (
             <KpiCard key={kpi.label} {...kpi} />

@@ -1,29 +1,12 @@
 import React, { useState } from "react";
 import { TabButton, TabContent } from "./ui/Tabs";
 import ByStatusStockCard from "./ByStatusStockCard";
+import { orderCardsData } from "@/data/fakedata";
 
 const options = [
   { title: "Order" },
   { title: "Delivered" },
   { title: "Finished" },
-];
-
-const orderCardsData = [
-  {
-    imgPath: "images/sambal.jpg",
-    name: "Sambal Fried Fish with Fresh Vegetables",
-    date: "7 Dec, 16:10",
-  },
-  {
-    imgPath: "images/archipielago.jpg",
-    name: "Archipelago Noodles with Chicken Katsu",
-    date: "7 Dec, 16:10",
-  },
-  {
-    imgPath: "images/salted.jpg",
-    name: "Salted Egg Chicken With Mayonnaise",
-    date: "7 Dec, 16:10",
-  },
 ];
 
 export default function ByStatusStockSection() {

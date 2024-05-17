@@ -20,16 +20,21 @@ export default function ShopCard({
   const [quantityToBuy, setQuantityToBuy] = useState(1);
 
   return (
-    <div className="w-full h-max bg-white rounded-2xl p-3 flex flex-row gap-4">
-      <div
-        className="rounded-[14px] bg-cover bg-center w-[120px] h-full shrink-0"
-        style={{ backgroundImage: `url(${img})` }}
-      ></div>
+    <div className="w-full h-max bg-white rounded-2xl p-3 flex flex-row gap-4 items-center">
+      <div className="rounded-[14px] w-[120px] h-full shrink-0 overflow-hidden">
+        <Image height={1000} width={1000} src={img} alt={title} />
+      </div>
       <div className="flex flex-col gap-4 w-full">
         <div className="flex flex-col gap-y-1">
           <p className="font-semibold text-base">{title}</p>
           <div className="flex flex-row gap-2 items-center">
-            <Image width={13} height={12} src="images/star.svg" alt="Rate" />
+            <Image
+              width={1000}
+              height={1000}
+              src="images/star.svg"
+              alt="Rate"
+              className=" h-3 w-auto"
+            />
             <p className=" text-xs font-semibold">
               {rate}
               {"  "}

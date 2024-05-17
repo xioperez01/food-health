@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 import Button from "./ui/Button";
+import Image from "next/image";
 
 interface Props {
   imgPath: string;
@@ -10,11 +11,17 @@ interface Props {
 
 export default function ByStatusStockCard({ imgPath, name, date }: Props) {
   return (
-    <div className="w-full p-[10px] rounded-2xl bg-white flex flex-row gap-6">
-      <div
-        style={{ backgroundImage: `url(${imgPath})` }}
-        className="w-[91px] shrink-0 rounded-2xl aspect-square bg-cover bg-center"
-      ></div>
+    <div className="w-full p-[10px] rounded-2xl bg-white flex flex-row gap-6 items-center">
+      <div className="rounded-[14px] w-[120px] md:w-[91px] aspect-square shrink-0 overflow-hidden">
+        <Image
+          height={1000}
+          width={1000}
+          src={imgPath}
+          alt={name}
+          className="h-full"
+        />
+      </div>
+
       <div className="flex flex-col gap-0.5 items-start w-full">
         <p className="font-medium text-xl">{name}</p>
         <div className="flex flex-wrap items-center justify-between w-full">

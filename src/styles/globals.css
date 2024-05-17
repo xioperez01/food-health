@@ -47,3 +47,8 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #b9b9b9;
 }
+
+input:focus-visible {
+  outline: none;
+  border: 1px solid #cacaca;
+}

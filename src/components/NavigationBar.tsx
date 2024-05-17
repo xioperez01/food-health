@@ -13,15 +13,21 @@ export const navigation = [
 
 function NavigationBar() {
   return (
-    <div className="hidden h-full p-8 w-max border rounded-[22px] md:flex flex-col items-center justify-between bg-gradient_sideBar">
-      <img src="/icons/local_dining.svg" alt="Food Health" />
-      <div className="flex flex-col items-start gap-10">
-        {navigation.map((item) => (
-          <NavigationItem key={item.href} {...item} />
-        ))}
+    <nav className="hidden h-full p-8 w-max border rounded-[22px] md:flex flex-col items-center justify-between bg-gradient_sideBar">
+      <div className="flex flex-col gap-20">
+        <button>
+          <img src="/icons/local_dining.svg" alt="Food Health" />
+        </button>
+        <div className="flex flex-col items-start gap-10">
+          {navigation.map((item) => (
+            <NavigationItem key={item.href} {...item} />
+          ))}
+        </div>
       </div>
-      <img src="/icons/logout.svg" alt="Log Out" />
-    </div>
+      <button>
+        <img src="/icons/logout.svg" alt="Log Out" />
+      </button>
+    </nav>
   );
 }
 
