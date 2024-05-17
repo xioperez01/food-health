@@ -29,6 +29,7 @@ export default function Stock() {
             src="/images/healthy-salad.jpg"
             className="h-full shrink w-full"
             alt="Salad"
+            priority
           />
         </div>
 

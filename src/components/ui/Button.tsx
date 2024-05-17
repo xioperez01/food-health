@@ -3,7 +3,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const variants = cva(
-  "inline-flex items-center justify-center rounded font-medium text-white rounded-full text-xs xl:text-base",
+  "inline-flex items-center justify-center rounded font-medium text-white rounded-full text-xs sm:text-base",
   {
     variants: {
       variant: {

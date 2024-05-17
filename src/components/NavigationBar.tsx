@@ -13,12 +13,12 @@ export const navigation = [
 
 function NavigationBar() {
   return (
-    <nav className="hidden h-full p-8 w-max border rounded-[22px] md:flex flex-col items-center justify-between bg-gradient_sideBar">
-      <div className="flex flex-col gap-20">
-        <button>
+    <nav className="h-full p-8 w-4/5 md:w-max border md:rounded-[22px] flex flex-col items-center justify-between bg-gradient_sideBar">
+      <div className="flex flex-col gap-20 w-full">
+        <button className="hidden md:block">
           <img src="/icons/local_dining.svg" alt="Food Health" />
         </button>
-        <div className="flex flex-col items-start gap-10">
+        <div className="flex flex-col items-start justify-between gap-5 md:gap-10 w-full">
           {navigation.map((item) => (
             <NavigationItem key={item.href} {...item} />
           ))}

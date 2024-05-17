@@ -17,8 +17,8 @@ function NavigationItem(props: NavigationItem) {
   return (
     <button
       className={clsx(
-        "h-10 w-10 p-2.5 rounded hover:backdrop-blur hover:bg-white/30 duration-200",
-        { "backdrop-blur bg-white/30": path === props?.href }
+        "w-full h-20 md:h-10 md:w-10 p-2.5 rounded hover:bg-white/30 duration-200 flex flex-row gap-4 items-center justify-center",
+        { "bg-white/30": path === props?.href }
       )}
       onClick={() => void router.replace(props.href)}
     >
@@ -27,8 +27,9 @@ function NavigationItem(props: NavigationItem) {
         height={1000}
         src={`/icons/${props?.icon}.svg`}
         alt={props?.name}
-        className=" h-[18px] w-[18px]"
+        className=" h-6 w-6 md:h-[18px] md:w-[18px]"
       />
+      <p className="text-white md:hidden font-semibold">{props.name}</p>
     </button>
   );
 }
