@@ -8,25 +8,29 @@ import React, { ReactElement } from "react";
 
 export default function Stock() {
   return (
-    <div className="md:h-[calc(100vh-128px)] 2xl:h-[calc(100vh-152px)] w-full grid grid-cols-12 gap-10 overflow-hidden">
-      <div className="col-span-8 flex flex-col gap-4 overflow-auto">
-        <div className="w-full h-52 flex flex-row items-center shrink-0 justify-between rounded-[14px] bg-lightOrange text-white">
-          <div className="flex flex-col py-6 pl-10 w-2/5 gap-2">
-            <div className="font-semibold text-4xl">
-              <h1>Discount</h1>
+    <div className="xl:h-[calc(100vh-128px)] 2xl:h-[calc(100vh-152px)] w-full flex flex-col xl:flex-row gap-6 md:gap-6 xl:gap-8 overflow-y-auto overflow-x-hidden md:overflow-hidden">
+      {/* Left Panel */}
+      <div className="w-full xl:w-3/5 shrink flex flex-col gap-4 overflow-y-auto overflow-x-hidden xl:pr-1">
+        <div className="bg-clip-border overflow-hidden w-full flex flex-row items-center shrink-0 justify-between md:rounded-[14px] bg-lightOrange text-white">
+          <div className="flex flex-col py-6 pl-4 sm:pl-8 xl:pl-10 gap-2 shrink-0 w-2/3 sm:w-2/3 xl:w-3/5">
+            <div className="font-semibold text-[40px]">
+              <h1 className="hidden xl:block">Discount</h1>
               <h1>New Menu!</h1>
             </div>
-            <p className=" line-clamp-2">
+            <p className="md:line-clamp-2">
               Get Free Shipping Every $30 With No Minimum Purchase
             </p>
           </div>
-          <div
-            className=" h-52 w-72 bg-cover bg-center"
-            style={{ backgroundImage: "url('/images/healthy-salad.jpg')" }}
-          ></div>
+
+          {/*<div
+              className="h-full w-1/3 shrink bg-cover bg-center aspect-auto"
+              style={{ backgroundImage: "url('/images/healthy-salad.jpg')" }}
+  ></div>*/}
+
+          <img src="/images/healthy-salad.jpg" className="h-full shrink" />
         </div>
 
-        <div className="w-full h-max flex flex-col gap-4">
+        <div className="w-full h-max flex flex-col gap-4 px-2 sm:px-5 md:px-0">
           <h2 className="font-semibold text-xl">Categories</h2>
           <div className="w-full flex flex-row gap-2 h-max">
             {categoriesData?.map((category) => (
@@ -37,7 +41,8 @@ export default function Stock() {
 
         <ByStatusStockSection />
       </div>
-      <div className="col-span-4 flex flex-col gap-4 overflow-auto">
+      {/* Right Panel */}
+      <div className="w-full xl:w-2/5 shrink-0 flex flex-col gap-4 overflow-auto xl:pr-1 px-2 sm:px-5 md:px-0">
         <div className="h-52 grid grid-cols-2 gap-1">
           {kpisData?.map((kpi) => (
             <KpiCard key={kpi.label} {...kpi} />

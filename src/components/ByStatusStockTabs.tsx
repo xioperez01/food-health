@@ -28,10 +28,11 @@ const orderCardsData = [
 
 export default function ByStatusStockSection() {
   const [activeTab, setActiveTab] = useState("Order");
+
   return (
-    <div className="w-full flex-col items-center justify-between">
+    <div className="w-full flex-col items-center justify-between px-2 sm:px-5 md:px-0">
       <div className="w-full flex flex-row items-center justify-between">
-        <div className="flex flex-row gap-12">
+        <div className="flex flex-row gap-2 md:gap-4 xl:gap-12">
           {options?.map((option) => (
             <TabButton
               key={option?.title}
@@ -42,7 +43,9 @@ export default function ByStatusStockSection() {
             </TabButton>
           ))}
         </div>
-        <button className="text-primary font-medium text-base">See all</button>
+        <button className="text-primary font-medium text-base shrink-0">
+          See all
+        </button>
       </div>
       <TabContent name="Order" active={activeTab}>
         <div className="flex flex-col gap-2 w-full">

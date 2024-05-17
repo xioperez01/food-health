@@ -19,7 +19,7 @@ export default function ByStatusStockCard({ imgPath, name, date }: Props) {
         <p className="font-medium text-xl">{name}</p>
         <div className="flex flex-wrap items-center justify-between w-full">
           <p className="font-medium text-xl text-secondary">{date}</p>
-          <Button>Order Again</Button>
+          <Button className="w-5/6 sm:w-auto">Order Again</Button>
         </div>
       </div>
     </div>

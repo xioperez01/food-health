@@ -12,7 +12,7 @@ export function TabButton({ children, isActive, onClick }: TabButtonProps) {
     <button
       className={clsx(
         "text-secondary font-medium text-xl px-1 hover:border-black hover:border-b-2 hover:text-black duration-200",
-        { "border-black border-b-2 text-[#000]": isActive }
+        { "border-black border-b-2 text-black": isActive }
       )}
       onClick={onClick}
     >

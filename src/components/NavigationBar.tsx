@@ -13,7 +13,7 @@ export const navigation = [
 
 function NavigationBar() {
   return (
-    <div className="h-full p-8 w-max border rounded-[22px] flex flex-col items-center justify-between bg-gradient_sideBar">
+    <div className="hidden h-full p-8 w-max border rounded-[22px] md:flex flex-col items-center justify-between bg-gradient_sideBar">
       <img src="/icons/local_dining.svg" alt="Food Health" />
       <div className="flex flex-col items-start gap-10">
         {navigation.map((item) => (
